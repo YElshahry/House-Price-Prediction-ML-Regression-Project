@@ -1,0 +1,16 @@
+# Python junk
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook junk
+.ipynb_checkpoints/
+
+# Distribution / Build junk
+build/
+dist/
+*.egg-info/
+
+# Virtual Environments
+venv/
+env/

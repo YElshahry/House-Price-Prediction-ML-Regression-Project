@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 
-def load_csv(path='data/housing.csv'):
+def load_data(path='data/housing.csv'):
     """
     Loads the housing data from the specified path.
     """

@@ -16,15 +16,16 @@ class FeatureEngineer(BaseEstimator, TransformerMixin):
         return self
 
     def transform(self, X):
-        X_copy = X.copy()
-
-        X_copy['rooms_per_household'] = X_copy['total_rooms'] / X_copy['households']
-        X_copy['population_per_household'] = X_copy['population'] / X_copy['households']
+        rooms_ix, bedrooms_ix, population_ix, households_ix = 3, 4, 5, 6
+        
+        rooms_per_household = X[:, rooms_ix] / X[:, households_ix]
+        population_per_household = X[:, population_ix] / X[:, households_ix]
 
         if self.add_bedrooms_per_room:
-            X_copy['bedrooms_per_room'] = X_copy['total_bedrooms'] / X_copy['total_rooms']
-        
-        return X_copy
+            bedrooms_per_room = X[:, bedrooms_ix] / X[:, rooms_ix]
+            return np.c_[X, rooms_per_household, population_per_household, bedrooms_per_room]
+        else:
+            return np.c_[X, rooms_per_household, population_per_household]
 
 def preprocess_data(df):
     """
