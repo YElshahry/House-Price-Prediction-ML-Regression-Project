@@ -6,7 +6,6 @@ A machine learning project to predict median house values in California using re
 * `data/`: Contains the dataset (`housing.csv`).
 * `notebooks/`: Jupyter notebooks for Exploratory Data Analysis (EDA) and Model Training.
 * `src/`: Custom Python package for data preprocessing pipelines and model training.
-* `models/`: Directory for saved model artifacts.
 
 ## Installation
 1.  **Clone the repository:**
